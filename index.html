@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="vn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>[Bài tập] Từ điển</title>
+</head>
+<body>
+  <h1>[Bài tập] Từ điển</h1>
+  <label for="english">English</label>
+  <input type="text" id="english">
+  <label for="vietnamese">Vietnamese</label>
+  <input type="text" id="vietnamese" readonly>
+  
+  
+  <script>
+    const english = ['dog', 'cat', 'monkey'];
+    const vietnamese = ['Cho', 'Meo', 'Khi'];
+    
+    document.querySelector('#english').addEventListener('keyup', (e) => {
+      const index = english.indexOf(e.target.value.toLowerCase());
+      if (index > -1) {
+        document.querySelector('#vietnamese').value = vietnamese[index];
+      } else {
+        document.querySelector('#vietnamese').value = 'khong tim thay';
+      }
+    })
+    
+  </script>
+</body>
+</html>
