@@ -13,20 +13,14 @@
   <label for="vietnamese">Vietnamese</label>
   <input type="text" id="vietnamese" readonly>
   
-  
   <script>
     const english = ['dog', 'cat', 'monkey'];
     const vietnamese = ['Cho', 'Meo', 'Khi'];
     
     document.querySelector('#english').addEventListener('keyup', (e) => {
       const index = english.indexOf(e.target.value.toLowerCase());
-      if (index > -1) {
-        document.querySelector('#vietnamese').value = vietnamese[index];
-      } else {
-        document.querySelector('#vietnamese').value = 'khong tim thay';
-      }
+      document.querySelector('#vietnamese').value = index > -1 ? vietnamese[index] : 'khong tim thay ket qua';
     })
-    
   </script>
 </body>
 </html>
